@@ -1,0 +1,28 @@
+<html>
+<body>
+  <h1>{{ company.name }}</h1>
+
+<!--
+  <p>
+	<img src="http://www.knowmore.org/wiki/images/c/c6/Worker-{{ company.worker }}.gif"/>
+	<img src="http://www.knowmore.org/wiki/images/e/e2/Human-{{ company.human }}.gif"/>
+	<img src="http://www.knowmore.org/wiki/images/c/c0/Political-{{ company.politics }}.gif"/>
+	<img src="http://www.knowmore.org/wiki/images/6/60/Environment-{{ company.environment }}.gif"/>
+	<img src="http://www.knowmore.org/wiki/images/6/65/Business-{{ company.ethics }}.gif"/>
+  </p>
+-->
+  <p>{{ company.summary }}</p>
+
+  <p><strong>Last updated:</strong> {{ company.timestamp }} </p>
+  <p><strong>Company website(s):</strong> 
+	<ul>
+	  {% for website in company.co_url %}
+	  <li><a href="{{ website }}">{{ website }}</a></li>
+	  {% endfor %}
+	</ul>
+  </p>
+
+  <p>Want to <a href="{{company.km_url}}">know more</a>?</p>
+
+</body>
+</html>
